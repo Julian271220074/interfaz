@@ -79,7 +79,7 @@ public class frmE07 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(60, 210, 80, 24);
+        btnCalcular.setBounds(60, 210, 80, 23);
 
         jLabel4.setBackground(new java.awt.Color(153, 102, 0));
         jLabel4.setText("    CATETO 1");
@@ -105,7 +105,7 @@ public class frmE07 extends javax.swing.JFrame {
         jLabel3.setText("HALLAR HIPOTENUSA");
         jLabel3.setOpaque(true);
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(270, 10, 120, 16);
+        jLabel3.setBounds(270, 10, 130, 16);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
@@ -121,7 +121,7 @@ public class frmE07 extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pitagoras.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(-10, -10, 500, 280);
+        jLabel1.setBounds(0, 0, 490, 260);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -217,6 +217,7 @@ public class frmE07 extends javax.swing.JFrame {
     }
 
     public void calcularHipotenusa() {
+        if(isNumber(txtCateto1.getText()) && isNumber(txtCateto2.getText())){
         int cat1 = 0, cat2 = 0;
         float Resultado = 0.0f;
         float Resultado1 = 0.0f, Resultadot = 0.0f;
@@ -230,6 +231,7 @@ public class frmE07 extends javax.swing.JFrame {
         lblResultado.setText(df.format(Resultadot));
         lblResultado.setVisible(true);
 
+    }
     }
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:

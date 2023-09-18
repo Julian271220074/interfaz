@@ -61,6 +61,7 @@ public class frmE011 extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("       EJERCICIO 11");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(70, 20, 200, 29);
@@ -75,6 +76,7 @@ public class frmE011 extends javax.swing.JFrame {
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
         btnCalcular.setText("Calcular");
         btnCalcular.setOpaque(true);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -83,16 +85,18 @@ public class frmE011 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(140, 230, 80, 24);
+        btnCalcular.setBounds(140, 230, 80, 23);
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("NUMERO");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(150, 90, 70, 20);
 
         jLabel3.setBackground(new java.awt.Color(153, 102, 0));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("MOSTRAR NUMERO EN  ORDEN INVERSO");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(40, 50, 310, 16);
@@ -103,15 +107,16 @@ public class frmE011 extends javax.swing.JFrame {
 
         jLabel7.setBackground(new java.awt.Color(153, 102, 0));
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("  RESULTADO");
         jPanel1.add(jLabel7);
         jLabel7.setBounds(130, 160, 100, 20);
 
         jLabel1.setBackground(new java.awt.Color(153, 102, 0));
         jLabel1.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TalleresJavaa/imagenes/OIP.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/two.jpeg"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 10, 360, 260);
+        jLabel1.setBounds(0, 0, 370, 280);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -207,8 +212,9 @@ public class frmE011 extends javax.swing.JFrame {
     }
    
       public void invertirNumero(){
-        String num;
-        num = (txtNumero.getText());
+        if(isNumber(txtNumero.getText())){
+            
+        String num = txtNumero.getText();
         int x = num.length();
         int[]nume;
         nume = new int[x];
@@ -220,17 +226,14 @@ public class frmE011 extends javax.swing.JFrame {
         }
         
         int y = x-1;
+        String Respuesta = "";
         
         for(int i = 1; i < x+1; i++){
             nume2[i] = (Character.getNumericValue(nume[y]));
-            
-             lblResultado.setText(""+nume2[i]);
-             
-                 y = 1;
-              
-               
-                
-               
+            Respuesta = (Respuesta + nume2[i]);
+             y -= 1; 
+        }  
+        lblResultado.setText(Respuesta);
               
         }
         

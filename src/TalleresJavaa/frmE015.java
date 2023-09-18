@@ -73,7 +73,7 @@ public class frmE015 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(200, 230, 80, 24);
+        btnCalcular.setBounds(200, 230, 80, 23);
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -102,7 +102,7 @@ public class frmE015 extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(153, 102, 0));
         jLabel1.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TalleresJavaa/imagenes/OIP (1).jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/OIP (1).jpg"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(10, 0, 460, 270);
 
