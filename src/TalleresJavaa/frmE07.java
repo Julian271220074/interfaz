@@ -2,19 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
  */
-package eje3;
+package TalleresJavaa;
+
+import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
 
 /**
- *
- * @author Usuario
+ * Usuario
  */
-public class frmEjercicio3 extends javax.swing.JFrame {
+public class frmE07 extends javax.swing.JFrame {
 
     /**
      * Creates new form frmEjercicio3
      */
-    public frmEjercicio3() {
+    public frmE07() {
         initComponents();
+        lblResultado.setVisible(false);
     }
 
     /**
@@ -28,10 +32,14 @@ public class frmEjercicio3 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        txtCateto1 = new javax.swing.JTextField();
+        btnCalcular = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtCateto2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
+        lblResultado = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -53,41 +61,67 @@ public class frmEjercicio3 extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Cambria Math", 0, 18)); // NOI18N
-        jLabel2.setText("AREA DEL CIRCULO");
-        jLabel2.setOpaque(true);
+        jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel2.setText("       EJERCICIO 7");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 20, 160, 22);
+        jLabel2.setBounds(60, 10, 200, 29);
+        jPanel1.add(txtCateto1);
+        txtCateto1.setBounds(10, 130, 80, 22);
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
-        jLabel3.setText("INGRESE EL RADIO");
-        jLabel3.setOpaque(true);
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 80, 120, 17);
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(30, 130, 100, 22);
-
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
-        jButton1.setText("Calcular");
-        jButton1.setOpaque(true);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
+        btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setText("Calcular");
+        btnCalcular.setOpaque(true);
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCalcularActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(40, 180, 80, 24);
+        jPanel1.add(btnCalcular);
+        btnCalcular.setBounds(60, 210, 80, 24);
 
-        jTextField2.setText("RESULTADO");
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(330, 180, 79, 22);
+        jLabel4.setBackground(new java.awt.Color(153, 102, 0));
+        jLabel4.setText("    CATETO 1");
+        jLabel4.setOpaque(true);
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(10, 100, 80, 16);
 
+        jLabel5.setBackground(new java.awt.Color(153, 102, 0));
+        jLabel5.setText("    CATETO 2");
+        jLabel5.setOpaque(true);
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(120, 100, 80, 16);
+
+        txtCateto2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                keyPressTxtCateto2(evt);
+            }
+        });
+        jPanel1.add(txtCateto2);
+        txtCateto2.setBounds(120, 130, 80, 22);
+
+        jLabel3.setBackground(new java.awt.Color(153, 102, 0));
+        jLabel3.setText("HALLAR HIPOTENUSA");
+        jLabel3.setOpaque(true);
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(270, 10, 120, 16);
+
+        lblResultado.setOpaque(true);
+        jPanel1.add(lblResultado);
+        lblResultado.setBounds(360, 190, 100, 30);
+
+        jLabel7.setBackground(new java.awt.Color(153, 102, 0));
+        jLabel7.setText("  RESULTADO");
+        jLabel7.setOpaque(true);
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(370, 146, 80, 20);
+
+        jLabel1.setBackground(new java.awt.Color(153, 102, 0));
         jLabel1.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eje3/pitagoras.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pitagoras.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, 10, 500, 252);
+        jLabel1.setBounds(-10, -10, 500, 280);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -156,15 +190,11 @@ public class frmEjercicio3 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
         );
 
         pack();
@@ -174,9 +204,44 @@ public class frmEjercicio3 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    public boolean isNumber(String numero) {
+        try {
+            int Number = Integer.parseInt(numero);
+            return true;
+        } catch (NumberFormatException NFE) {
+            JOptionPane.showMessageDialog(this,
+                    "El texto " + numero + " no es un numero valido",
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+
+    public void calcularHipotenusa() {
+        int cat1 = 0, cat2 = 0;
+        float Resultado = 0.0f;
+        float Resultado1 = 0.0f, Resultadot = 0.0f;
+        DecimalFormat df = new DecimalFormat("0.00");
+        cat1 = Integer.parseInt(txtCateto1.getText());
+        cat2 = Integer.parseInt(txtCateto2.getText());
+        Resultado = (float) Math.pow(cat1, 2);
+        Resultado1 = (float) Math.pow(cat2, 2);
+        Resultadot = (float)Resultado+Resultado1;
+
+        lblResultado.setText(df.format(Resultadot));
+        lblResultado.setVisible(true);
+
+    }
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        calcularHipotenusa();
+    }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void keyPressTxtCateto2(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_keyPressTxtCateto2
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calcularHipotenusa();
+        }
+    }//GEN-LAST:event_keyPressTxtCateto2
 
     /**
      * @param args the command line arguments
@@ -195,26 +260,28 @@ public class frmEjercicio3 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmEjercicio3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmE07.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmEjercicio3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmE07.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmEjercicio3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmE07.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmEjercicio3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmE07.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmEjercicio3().setVisible(true);
+                new frmE07().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JButton btnCalcular;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
@@ -223,18 +290,21 @@ public class frmEjercicio3 extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lblResultado;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
+    private javax.swing.JTextField txtCateto1;
+    private javax.swing.JTextField txtCateto2;
     // End of variables declaration//GEN-END:variables
 
 }
