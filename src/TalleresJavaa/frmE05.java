@@ -32,6 +32,8 @@ public class frmE05 extends javax.swing.JFrame {
         txtNumero = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
         lblResultado = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -54,17 +56,17 @@ public class frmE05 extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(153, 255, 153));
         jLabel2.setText("       EJERCICIO 5");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(140, 10, 200, 29);
+        jLabel2.setBounds(150, 10, 200, 29);
 
         jLabel4.setBackground(new java.awt.Color(153, 102, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("AÑO/MES/DIA");
+        jLabel4.setForeground(new java.awt.Color(153, 255, 153));
+        jLabel4.setText("VERIFICAR FECHA");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(180, 70, 130, 16);
+        jLabel4.setBounds(180, 70, 160, 16);
 
         txtNumero.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -72,11 +74,10 @@ public class frmE05 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtNumero);
-        txtNumero.setBounds(110, 100, 280, 30);
+        txtNumero.setBounds(120, 170, 280, 30);
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
-        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
         btnCalcular.setText("Calcular");
         btnCalcular.setOpaque(true);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -85,11 +86,25 @@ public class frmE05 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(220, 150, 80, 23);
+        btnCalcular.setBounds(220, 340, 80, 24);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(150, 250, 230, 50);
+        lblResultado.setBounds(130, 270, 260, 50);
+
+        jLabel5.setBackground(new java.awt.Color(153, 102, 0));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 255, 153));
+        jLabel5.setText("RESULTADO");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(200, 230, 110, 25);
+
+        jLabel6.setBackground(new java.awt.Color(153, 102, 0));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 255, 153));
+        jLabel6.setText("AÑO/MES/DIA");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(190, 140, 130, 25);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tree.jpeg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -163,11 +178,11 @@ public class frmE05 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
         );
 
         pack();
@@ -236,6 +251,8 @@ public class frmE05 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JMenuBar menuBar;

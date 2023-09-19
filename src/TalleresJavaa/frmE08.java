@@ -28,6 +28,11 @@ public class frmE08 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        btnCalcular = new javax.swing.JButton();
+        lblResultado = new javax.swing.JLabel();
+        txtNumero = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -53,7 +58,45 @@ public class frmE08 extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("      EJERCICIO 8");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(60, 20, 200, 29);
+        jLabel2.setBounds(70, 20, 200, 29);
+
+        jLabel4.setBackground(new java.awt.Color(153, 102, 0));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("VERIFICAR FECHA");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(100, 110, 160, 16);
+
+        btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
+        btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setText("Calcular");
+        btnCalcular.setOpaque(true);
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCalcular);
+        btnCalcular.setBounds(140, 300, 80, 24);
+
+        lblResultado.setOpaque(true);
+        jPanel1.add(lblResultado);
+        lblResultado.setBounds(50, 350, 260, 50);
+
+        txtNumero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNumerokeyPressTxtNumero(evt);
+            }
+        });
+        jPanel1.add(txtNumero);
+        txtNumero.setBounds(40, 230, 280, 30);
+
+        jLabel5.setBackground(new java.awt.Color(153, 102, 0));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("AÑO/MES/DIA");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(110, 190, 130, 16);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/four.jpeg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -141,6 +184,15 @@ public class frmE08 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void txtNumerokeyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerokeyPressTxtNumero
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumerokeyPressTxtNumero
+
     /**
      * @param args the command line arguments
      */
@@ -178,6 +230,7 @@ public class frmE08 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JButton btnCalcular;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
@@ -188,12 +241,16 @@ public class frmE08 extends javax.swing.JFrame {
     private javax.swing.JMenu helpMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblResultado;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
+    private javax.swing.JTextField txtNumero;
     // End of variables declaration//GEN-END:variables
 
 }

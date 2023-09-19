@@ -26,8 +26,15 @@ public class frmE016 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        btnCalcular = new javax.swing.JButton();
+        txtNumero1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        lblResultado = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -44,6 +51,8 @@ public class frmE016 extends javax.swing.JFrame {
         contentsMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ileven.jpeg"))); // NOI18N
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
@@ -54,6 +63,51 @@ public class frmE016 extends javax.swing.JFrame {
         jLabel2.setText("    EJERCICIO 16");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(80, 10, 200, 29);
+
+        btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
+        btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setText("Calcular");
+        btnCalcular.setOpaque(true);
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCalcular);
+        btnCalcular.setBounds(140, 380, 80, 24);
+
+        txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNumero1keyPressTxtNumero(evt);
+            }
+        });
+        jPanel1.add(txtNumero1);
+        txtNumero1.setBounds(70, 200, 220, 30);
+
+        jLabel4.setBackground(new java.awt.Color(153, 102, 0));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("CAPITALIZAR DADENA");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(80, 60, 200, 30);
+
+        jLabel5.setBackground(new java.awt.Color(153, 102, 0));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("INGRESE FRASE DE 5 PALABRAS");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(40, 150, 290, 30);
+
+        jLabel6.setBackground(new java.awt.Color(153, 102, 0));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("RESULTADO");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(130, 250, 110, 30);
+
+        lblResultado.setOpaque(true);
+        jPanel1.add(lblResultado);
+        lblResultado.setBounds(90, 300, 180, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ileven.jpeg"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -130,7 +184,7 @@ public class frmE016 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
         );
 
         pack();
@@ -139,6 +193,15 @@ public class frmE016 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void txtNumero1keyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1keyPressTxtNumero
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumero1keyPressTxtNumero
 
     /**
      * @param args the command line arguments
@@ -177,6 +240,7 @@ public class frmE016 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JButton btnCalcular;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
@@ -187,12 +251,18 @@ public class frmE016 extends javax.swing.JFrame {
     private javax.swing.JMenu helpMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblResultado;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
+    private javax.swing.JTextField txtNumero1;
     // End of variables declaration//GEN-END:variables
 
 }
