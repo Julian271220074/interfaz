@@ -4,6 +4,9 @@
  */
 package TalleresJavaa;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aprendiz
@@ -15,6 +18,7 @@ public class frmE09 extends javax.swing.JFrame {
      */
     public frmE09() {
         initComponents();
+         lblResultado.setVisible(false);
     }
 
     /**
@@ -70,12 +74,14 @@ public class frmE09 extends javax.swing.JFrame {
 
         jLabel4.setBackground(new java.awt.Color(153, 102, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("VERIFICAR MES");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(110, 100, 140, 30);
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
         btnCalcular.setText("Calcular");
         btnCalcular.setOpaque(true);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +90,7 @@ public class frmE09 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(140, 310, 80, 24);
+        btnCalcular.setBounds(140, 310, 80, 23);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
@@ -92,12 +98,14 @@ public class frmE09 extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(153, 102, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("RESULTADO");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(130, 370, 110, 30);
 
         jLabel6.setBackground(new java.awt.Color(153, 102, 0));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("ingrese un numero entre 1-12");
         jPanel1.add(jLabel6);
         jLabel6.setBounds(50, 200, 280, 30);
@@ -187,12 +195,78 @@ public class frmE09 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
+        public boolean isNumber (String numero){
+        try{
+            int Number = Integer.parseInt(numero);
+            return true;
+        }catch(NumberFormatException NFE){
+            JOptionPane.showMessageDialog(this, 
+                    "El texto "+numero +" no es un numero valido", 
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+    public void calendario(){
+        if(isNumber(txtNumero.getText())){
+            int num = 0;
+            num = Integer.parseInt(txtNumero.getText());
+            
+            switch (num) {
+                case 1:
+                    lblResultado.setText("Enero es el numero: " + num);
+                    break;
+                 case 2:
+                    lblResultado.setText("Febrero es el numero: " + num);
+                    break; 
+                 case 3:
+                    lblResultado.setText("Marzo es el numero: " + num);
+                    break;
+                 case 4:
+                    lblResultado.setText("Abril es el numero: " + num);
+                    break;
+                 case 5:
+                    lblResultado.setText("Mayo es el numero: " + num);
+                    break;
+                 case 6:
+                    lblResultado.setText("Junio es el numero: " + num);
+                    break;
+                 case 7:
+                    lblResultado.setText("Julio es el numero: " + num);
+                    break;
+                 case 8:
+                    lblResultado.setText("Agosto es el numero: " + num);
+                    break;
+                 case 9:
+                    lblResultado.setText("Septiembre es el numero: " + num);
+                    break;
+                 case 10:
+                    lblResultado.setText("Octubre es el numero: " + num);
+                    break;
+                 case 11:
+                    lblResultado.setText("Noviembre es el numero: " + num);
+                    break;
+                 case 12:
+                    lblResultado.setText("Diciembre es el numero: " + num);
+                    break;
+                 default:
+                     JOptionPane.showMessageDialog(this, "Digite un numero entre 1 y 12", "Error", JOptionPane.ERROR_MESSAGE);
+                     txtNumero.setText("");
+                     
+            }
+           lblResultado.setVisible(true); 
+        }
+    }    
     private void txtNumerokeyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerokeyPressTxtNumero
         // TODO add your handling code here:
+         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calendario();
+
+        }
     }//GEN-LAST:event_txtNumerokeyPressTxtNumero
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
+        calendario();
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**

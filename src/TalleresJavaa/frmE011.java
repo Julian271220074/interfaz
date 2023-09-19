@@ -7,8 +7,6 @@ package TalleresJavaa;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
-
-
 /**
  *
  * @author Usuario
@@ -20,6 +18,7 @@ public class frmE011 extends javax.swing.JFrame {
      */
     public frmE011() {
         initComponents();
+        lblResultado.setVisible(false);
     }
 
     /**
@@ -72,7 +71,7 @@ public class frmE011 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtNumero);
-        txtNumero.setBounds(140, 110, 80, 30);
+        txtNumero.setBounds(140, 120, 80, 30);
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
@@ -199,46 +198,47 @@ public class frmE011 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-      public boolean isNumber (String numero){
-        try{
+    public boolean isNumber(String numero) {
+        try {
             int Number = Integer.parseInt(numero);
             return true;
-        }catch(NumberFormatException NFE){
-            JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un numero valido", 
+        } catch (NumberFormatException NFE) {
+            JOptionPane.showMessageDialog(this,
+                    "El texto " + numero + " no es un numero valido",
                     "Numero Invalido", JOptionPane.ERROR_MESSAGE);
             return false;
         }
     }
-   
-      public void invertirNumero(){
-        if(isNumber(txtNumero.getText())){
-            
-        String num = txtNumero.getText();
-        int x = num.length();
-        int[]nume;
-        nume = new int[x];
-        int[]nume2;
-        nume2 = new int[x+1];
-        
-        for(int i = 0; i < x; i++){
-            nume[i] = ((num.charAt(i)));
+
+    public void invertirNumero() {
+        if (isNumber(txtNumero.getText())) {
+
+            String num = txtNumero.getText();
+
+            int x = num.length();
+            int[] nume;
+            nume = new int[x];
+            int[] nume2;
+            nume2 = new int[x + 1];
+
+            for (int i = 0; i < x; i++) {
+                nume[i] = ((num.charAt(i)));
+            }
+
+            int y = x - 1;
+            String Respuesta = "";
+
+            for (int i = 1; i < x + 1; i++) {
+                nume2[i] = (Character.getNumericValue(nume[y]));
+                Respuesta = (Respuesta + nume2[i]);
+                y -= 1;
+            }
+            lblResultado.setText(Respuesta);
+            lblResultado.setVisible(true);
         }
-        
-        int y = x-1;
-        String Respuesta = "";
-        
-        for(int i = 1; i < x+1; i++){
-            nume2[i] = (Character.getNumericValue(nume[y]));
-            Respuesta = (Respuesta + nume2[i]);
-             y -= 1; 
-        }  
-        lblResultado.setText(Respuesta);
-              
-        }
-        
+
     }
-    
+
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
         invertirNumero();
@@ -246,7 +246,7 @@ public class frmE011 extends javax.swing.JFrame {
 
     private void keyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_keyPressTxtNumero
         // TODO add your handling code here:
-         if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             invertirNumero();
         }
     }//GEN-LAST:event_keyPressTxtNumero

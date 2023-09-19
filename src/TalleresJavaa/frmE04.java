@@ -4,6 +4,9 @@
  */
 package TalleresJavaa;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
@@ -15,6 +18,7 @@ public class frmE04 extends javax.swing.JFrame {
      */
     public frmE04() {
         initComponents();
+        lblResultado.setVisible(false);
     }
 
     /**
@@ -82,9 +86,11 @@ public class frmE04 extends javax.swing.JFrame {
         jPanel1.add(txtNumero);
         txtNumero.setBounds(50, 130, 160, 30);
 
+        lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        lblResultado.setText("<html><center><br><center>");
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(10, 310, 230, 50);
+        lblResultado.setBounds(10, 270, 230, 60);
 
         btnOperar.setBackground(new java.awt.Color(153, 153, 153));
         btnOperar.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
@@ -97,12 +103,12 @@ public class frmE04 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnOperar);
-        btnOperar.setBounds(80, 370, 100, 23);
+        btnOperar.setBounds(80, 390, 100, 23);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/espace (Custom).jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(-10, 0, 270, 440);
+        jLabel2.setBounds(-10, 0, 260, 440);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -172,8 +178,9 @@ public class frmE04 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,17 +193,49 @@ public class frmE04 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+    public boolean isNumber(String numero) {
+        try {
+            int Number = Integer.parseInt(numero);
+            return true;
+        } catch (NumberFormatException NFE) {
+            JOptionPane.showMessageDialog(this,
+                    "El texto " + numero + " no es un numero valido",
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
 
+    public void calcularMultiplo() {
+        if (isNumber(txtNumero.getText())) {
+            int num = 0;
+            num = Integer.parseInt(txtNumero.getText());
+            if (num <= 0) {
+                JOptionPane.showMessageDialog(this, "Error, digite un numero mayor a 0", "error", JOptionPane.ERROR_MESSAGE);
+                txtNumero.setText("");
+            } else {
+                if (num % 2 == 0 && num % 3 == 0) {
+                    lblResultado.setText("El numero ingresado es multiplo de 2 y 3");
+                } else {
+                    lblResultado.setText("El numero ingresado no es multiplo de 2 y 3");
+                }
+            }
+            lblResultado.setVisible(true);
+        }
+    }
     private void txtNumerokeyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerokeyPressTxtNumero
         // TODO add your handling code here:
-        
-            
-        
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+          calcularMultiplo();   
+
+        }
+
+
     }//GEN-LAST:event_txtNumerokeyPressTxtNumero
 
     private void btnOperarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOperarActionPerformed
         // TODO add your handling code here:
-        
+        calcularMultiplo();
+
     }//GEN-LAST:event_btnOperarActionPerformed
 
     /**

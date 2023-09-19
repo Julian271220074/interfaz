@@ -4,6 +4,8 @@
  */
 package TalleresJavaa;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aprendiz
@@ -15,6 +17,7 @@ public class frmE06 extends javax.swing.JFrame {
      */
     public frmE06() {
         initComponents();
+        lblResultado.setVisible(false);
     }
 
     /**
@@ -32,9 +35,9 @@ public class frmE06 extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtNumero = new javax.swing.JTextField();
         txtNumero1 = new javax.swing.JTextField();
         txtNumero2 = new javax.swing.JTextField();
+        txtNumero3 = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
         lblResultado = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -92,33 +95,22 @@ public class frmE06 extends javax.swing.JFrame {
         jLabel7.setText("numero 3");
         jPanel1.add(jLabel7);
         jLabel7.setBounds(20, 260, 100, 16);
-
-        txtNumero.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNumerokeyPressTxtNumero(evt);
-            }
-        });
-        jPanel1.add(txtNumero);
-        txtNumero.setBounds(20, 100, 90, 30);
-
-        txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNumero1keyPressTxtNumero(evt);
-            }
-        });
         jPanel1.add(txtNumero1);
-        txtNumero1.setBounds(20, 200, 90, 30);
+        txtNumero1.setBounds(20, 100, 90, 30);
+        jPanel1.add(txtNumero2);
+        txtNumero2.setBounds(20, 200, 90, 30);
 
-        txtNumero2.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtNumero3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNumero2keyPressTxtNumero(evt);
+                txtNumero3keyPressTxtNumero(evt);
             }
         });
-        jPanel1.add(txtNumero2);
-        txtNumero2.setBounds(20, 300, 90, 30);
+        jPanel1.add(txtNumero3);
+        txtNumero3.setBounds(20, 300, 90, 30);
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
         btnCalcular.setText("Calcular");
         btnCalcular.setOpaque(true);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +119,7 @@ public class frmE06 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(270, 160, 80, 24);
+        btnCalcular.setBounds(270, 160, 80, 23);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
@@ -225,17 +217,30 @@ public class frmE06 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    private void txtNumerokeyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerokeyPressTxtNumero
+    public boolean isNumber(String numero) {
+        try {
+            int Number = Integer.parseInt(numero);
+            return true;
+        } catch (NumberFormatException NFE) {
+            JOptionPane.showMessageDialog(this,
+                    "El texto " + numero + " no es un numero valido",
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+    
+    public void numeros(){
+        if (isNumber (txtNumero1.getText()) && isNumber (txtNumero2.getText()) && isNumber (txtNumero3.getText())){
+         int num1 = Integer.parseInt(txtNumero1.getText());
+         int num2 = Integer.parseInt(txtNumero2.getText());
+         int num3 = Integer.parseInt(txtNumero3.getText());
+         
+         
+        }
+    }
+    private void txtNumero3keyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero3keyPressTxtNumero
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNumerokeyPressTxtNumero
-
-    private void txtNumero1keyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1keyPressTxtNumero
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNumero1keyPressTxtNumero
-
-    private void txtNumero2keyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero2keyPressTxtNumero
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNumero2keyPressTxtNumero
+    }//GEN-LAST:event_txtNumero3keyPressTxtNumero
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
@@ -302,9 +307,9 @@ public class frmE06 extends javax.swing.JFrame {
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
-    private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtNumero1;
     private javax.swing.JTextField txtNumero2;
+    private javax.swing.JTextField txtNumero3;
     // End of variables declaration//GEN-END:variables
 
 }

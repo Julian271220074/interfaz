@@ -224,12 +224,17 @@ public class frmE07 extends javax.swing.JFrame {
         DecimalFormat df = new DecimalFormat("0.00");
         cat1 = Integer.parseInt(txtCateto1.getText());
         cat2 = Integer.parseInt(txtCateto2.getText());
+        if(cat1>0 && cat2>0){
         Resultado = (float) Math.pow(cat1, 2);
         Resultado1 = (float) Math.pow(cat2, 2);
         Resultadot = (float)Resultado+Resultado1;
 
         lblResultado.setText(df.format(Resultadot));
         lblResultado.setVisible(true);
+        }
+        else {
+            JOptionPane.showMessageDialog(this, "Error, ingrese un numero mayor a 0", "error", JOptionPane.ERROR_MESSAGE);
+        }
 
     }
     }

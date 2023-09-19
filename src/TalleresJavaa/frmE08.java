@@ -4,6 +4,9 @@
  */
 package TalleresJavaa;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aprendiz
@@ -15,6 +18,7 @@ public class frmE08 extends javax.swing.JFrame {
      */
     public frmE08() {
         initComponents();
+        lblResultado.setVisible(false);
     }
 
     /**
@@ -69,6 +73,7 @@ public class frmE08 extends javax.swing.JFrame {
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
         btnCalcular.setText("Calcular");
         btnCalcular.setOpaque(true);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -77,15 +82,18 @@ public class frmE08 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(140, 300, 80, 24);
+        btnCalcular.setBounds(140, 300, 80, 23);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(50, 350, 260, 50);
+        lblResultado.setBounds(50, 380, 260, 80);
 
         txtNumero.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtNumerokeyPressTxtNumero(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                keyTypedTxtNumero(evt);
             }
         });
         jPanel1.add(txtNumero);
@@ -184,14 +192,64 @@ public class frmE08 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
+    public boolean isNumber(String numero) {
+        try {
+            int Number = Integer.parseInt(numero);
+            return true;
+        } catch (NumberFormatException NFE) {
+            JOptionPane.showMessageDialog(this,
+                    "El texto " + numero + " no es un numero valido",
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+
+    public void fecha2() {
+        if (isNumber(txtNumero.getText())) {
+            String dias = null, mees = null, anioss = null, fechas = null;
+            int anio = 0, mes = 0, dia = 0;
+            if (!(txtNumero.getText().length() == 8) || (txtNumero.getText().substring(1, 1) == "-")) {
+                JOptionPane.showMessageDialog(this, "Fecha invalida", "error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                anioss = txtNumero.getText().substring(0, 4);
+                mees = txtNumero.getText().substring(4, 6);
+                dias = txtNumero.getText().substring(6, 8);
+                anio = Integer.parseInt(anioss);
+                dia = Integer.parseInt(dias);
+                mes = Integer.parseInt(mees);
+            }
+            if ( (anio <= 2023) && (mes <= 12 && mes > 0) && (dia <= 31 && dia > 0)) {
+                lblResultado.setText("<html><b> Año: </b> " + anio + "<br><b> Mes: <b/> " + mes + "<br><b> Dia: </b> " + dia+"</html>");
+                lblResultado.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Fecha invalida", "error", JOptionPane.ERROR_MESSAGE);
+                 txtNumero.setText("");
+            }
+            lblResultado.setVisible(true);
+        }
+
+    }
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
+        fecha2();
 
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void txtNumerokeyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerokeyPressTxtNumero
         // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            fecha2();
+
+        }
     }//GEN-LAST:event_txtNumerokeyPressTxtNumero
+
+    private void keyTypedTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_keyTypedTxtNumero
+        // TODO add your handling code here:
+          if (txtNumero.getText().length() >= 8){
+            evt.consume();
+        }
+    
+    }//GEN-LAST:event_keyTypedTxtNumero
 
     /**
      * @param args the command line arguments
