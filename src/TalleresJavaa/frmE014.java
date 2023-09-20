@@ -56,24 +56,24 @@ public class frmE014 extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("       EJERCICIO 14");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(110, 30, 200, 29);
+        jLabel2.setBounds(110, 20, 210, 70);
 
         jLabel4.setBackground(new java.awt.Color(153, 102, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("DETERMINAR CADENA PALINDROMA");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(60, 70, 330, 30);
+        jLabel4.setBounds(60, 110, 330, 30);
 
         jLabel5.setBackground(new java.awt.Color(153, 102, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("RESULTADO");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(160, 320, 110, 30);
+        jLabel5.setBounds(180, 300, 110, 30);
 
         txtNumero.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -81,18 +81,18 @@ public class frmE014 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtNumero);
-        txtNumero.setBounds(80, 170, 280, 30);
+        txtNumero.setBounds(90, 230, 280, 30);
 
         jLabel6.setBackground(new java.awt.Color(153, 102, 0));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Ingrese una cadena de caracteres");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(80, 120, 290, 30);
+        jLabel6.setBounds(90, 190, 290, 30);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(90, 360, 260, 50);
+        lblResultado.setBounds(110, 350, 260, 50);
 
         btnCalcular.setBackground(new java.awt.Color(102, 0, 0));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
@@ -105,11 +105,11 @@ public class frmE014 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(170, 450, 80, 24);
+        btnCalcular.setBounds(190, 440, 80, 23);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ten.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E14.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 450, 630);
+        jLabel1.setBounds(0, -20, 450, 530);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -178,15 +178,11 @@ public class frmE014 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

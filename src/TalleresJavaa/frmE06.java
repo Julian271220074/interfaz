@@ -4,6 +4,7 @@
  */
 package TalleresJavaa;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,7 +18,9 @@ public class frmE06 extends javax.swing.JFrame {
      */
     public frmE06() {
         initComponents();
-        lblResultado.setVisible(false);
+        lblResultado3.setVisible(false);
+        lblResultado2.setVisible(false);
+        lblResultado1.setVisible(false);
     }
 
     /**
@@ -39,8 +42,10 @@ public class frmE06 extends javax.swing.JFrame {
         txtNumero2 = new javax.swing.JTextField();
         txtNumero3 = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
-        lblResultado = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        lblResultado1 = new javax.swing.JLabel();
+        lblResultado3 = new javax.swing.JLabel();
+        lblResultado2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -73,14 +78,14 @@ public class frmE06 extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("resultado");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(260, 200, 110, 30);
+        jLabel4.setBounds(260, 150, 110, 30);
 
         jLabel5.setBackground(new java.awt.Color(153, 102, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("<html><center>mostrar numeros<br> de menor a mayor<center>");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(230, 30, 160, 100);
+        jLabel5.setBounds(270, 20, 160, 100);
 
         jLabel6.setBackground(new java.awt.Color(153, 102, 0));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -119,11 +124,7 @@ public class frmE06 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(270, 160, 80, 23);
-
-        lblResultado.setOpaque(true);
-        jPanel1.add(lblResultado);
-        lblResultado.setBounds(200, 250, 230, 90);
+        btnCalcular.setBounds(270, 390, 80, 23);
 
         jLabel8.setBackground(new java.awt.Color(153, 102, 0));
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -132,9 +133,21 @@ public class frmE06 extends javax.swing.JFrame {
         jPanel1.add(jLabel8);
         jLabel8.setBounds(30, 60, 100, 16);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/one.jpeg"))); // NOI18N
+        lblResultado1.setOpaque(true);
+        jPanel1.add(lblResultado1);
+        lblResultado1.setBounds(200, 210, 230, 30);
+
+        lblResultado3.setOpaque(true);
+        jPanel1.add(lblResultado3);
+        lblResultado3.setBounds(200, 290, 230, 30);
+
+        lblResultado2.setOpaque(true);
+        jPanel1.add(lblResultado2);
+        lblResultado2.setBounds(200, 250, 230, 30);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E6.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 440, 360);
+        jLabel1.setBounds(0, 0, 460, 620);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -203,11 +216,11 @@ public class frmE06 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
         );
 
         pack();
@@ -228,22 +241,93 @@ public class frmE06 extends javax.swing.JFrame {
             return false;
         }
     }
-    
-    public void numeros(){
-        if (isNumber (txtNumero1.getText()) && isNumber (txtNumero2.getText()) && isNumber (txtNumero3.getText())){
-         int num1 = Integer.parseInt(txtNumero1.getText());
-         int num2 = Integer.parseInt(txtNumero2.getText());
-         int num3 = Integer.parseInt(txtNumero3.getText());
-         
-         
+
+    public void numero() {
+        if (isNumber(txtNumero1.getText()) && isNumber(txtNumero2.getText()) && isNumber(txtNumero3.getText())) {
+
+            int num1 = Integer.parseInt(txtNumero1.getText());
+            int num2 = Integer.parseInt(txtNumero2.getText());
+            int num3 = Integer.parseInt(txtNumero3.getText());
+
+            if (num1 == num2 || num1 == num3) {
+                lblResultado2.setText("Numeros iguales: " + num1);
+            }
+            if (num2 == num1 || num2 == num3) {
+                lblResultado2.setText("Numeros iguales: " + num2);
+            }
+            if (num3 == num1 || num3 == num2) {
+                lblResultado2.setText("Numeros iguales: " + num3);
+            }
+            if (num1 > num2 && num1 > num3) {
+                lblResultado1.setText("Numero mayor: " + num1);
+            }
+            if (num2 > num1 && num2 > num3) {
+                lblResultado1.setText("Numero mayor: " + num2);
+
+            }
+            if (num3 > num1 && num3 > num2) {
+                lblResultado1.setText("Numero mayor: " + num3);
+            }
+
+            if (num1 > num2) {
+                if (num1 < num3) {
+                    lblResultado2.setText("Numero de en medio: " + num1);
+                }
+            }
+            if (num1 > num3) {
+                if (num1 < num2) {
+                    lblResultado2.setText("Numero de en medio: " + num1);
+                }
+            }
+
+            if (num2 > num1) {
+                if (num2 < num3) {
+                    lblResultado2.setText("Numero de en medio: " + num2);
+                }
+            }
+            if (num2 > num3) {
+                if (num2 < num1) {
+                    lblResultado2.setText("Numero de en medio: " + num2);
+                }
+            }
+
+            if (num3 > num1) {
+                if (num3 < num2) {
+                    lblResultado2.setText("Numero de en medio: " + num3);
+                }
+            }
+            if (num3 > num2) {
+                if (num3 < num1) {
+                    lblResultado2.setText("Numero de en medio: " + num3);
+                }
+            }
+
+            if (num1 < num2 && num1 < num3) {
+                lblResultado3.setText("Numero menor: " + num1);
+            }
+            if (num2 < num1 && num2 < num3) {
+                lblResultado3.setText("Numero menor: " + num2);
+            }
+            if (num3 < num1 && num3 < num2) {
+                lblResultado3.setText("Numero menor: " + num3);
+
+            }
+            lblResultado1.setVisible(true);
+            lblResultado2.setVisible(true);
+            lblResultado3.setVisible(true);
         }
     }
     private void txtNumero3keyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero3keyPressTxtNumero
         // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            numero();
+
+        }
     }//GEN-LAST:event_txtNumero3keyPressTxtNumero
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
+        numero();
 
     }//GEN-LAST:event_btnCalcularActionPerformed
 
@@ -301,7 +385,9 @@ public class frmE06 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblResultado1;
+    private javax.swing.JLabel lblResultado2;
+    private javax.swing.JLabel lblResultado3;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;

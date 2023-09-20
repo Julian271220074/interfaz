@@ -63,15 +63,20 @@ public class frmE05 extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(153, 255, 153));
         jLabel2.setText("       EJERCICIO 5");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(140, 10, 200, 29);
+        jLabel2.setBounds(90, 10, 200, 29);
 
         jLabel4.setBackground(new java.awt.Color(153, 102, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 255, 153));
         jLabel4.setText("VERIFICAR FECHA");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(180, 70, 160, 16);
+        jLabel4.setBounds(130, 60, 160, 16);
 
+        txtNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeroActionPerformed(evt);
+            }
+        });
         txtNumero.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtNumerokeyPressTxtNumero(evt);
@@ -81,10 +86,11 @@ public class frmE05 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtNumero);
-        txtNumero.setBounds(120, 170, 280, 30);
+        txtNumero.setBounds(60, 160, 280, 30);
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
         btnCalcular.setText("Calcular");
         btnCalcular.setOpaque(true);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -93,30 +99,30 @@ public class frmE05 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(220, 340, 80, 23);
+        btnCalcular.setBounds(160, 340, 80, 23);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(130, 270, 260, 50);
+        lblResultado.setBounds(80, 260, 260, 50);
 
         jLabel5.setBackground(new java.awt.Color(153, 102, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 255, 153));
         jLabel5.setText("RESULTADO");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(200, 230, 110, 25);
+        jLabel5.setBounds(150, 220, 110, 25);
 
         jLabel6.setBackground(new java.awt.Color(153, 102, 0));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 255, 153));
         jLabel6.setText("AÑO/MES/DIA");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(190, 140, 130, 25);
+        jLabel6.setBounds(140, 110, 130, 25);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tree.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E5.gif"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 517, 432);
+        jLabel1.setBounds(0, 0, 410, 440);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -185,11 +191,11 @@ public class frmE05 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
         );
 
         pack();
@@ -259,6 +265,10 @@ public class frmE05 extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_keyTypedTxtNumero
+
+    private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumeroActionPerformed
 
     /**
      * @param args the command line arguments

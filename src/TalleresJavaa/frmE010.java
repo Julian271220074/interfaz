@@ -4,6 +4,9 @@
  */
 package TalleresJavaa;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aprendiz
@@ -15,6 +18,7 @@ public class frmE010 extends javax.swing.JFrame {
      */
     public frmE010() {
         initComponents();
+        lblResultado.setVisible(false);
     }
 
     /**
@@ -58,21 +62,22 @@ public class frmE010 extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("       EJERCICIO 10");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(40, 20, 200, 29);
+        jLabel2.setBounds(110, 20, 200, 29);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(30, 280, 260, 50);
+        lblResultado.setBounds(80, 330, 270, 130);
 
         jLabel4.setBackground(new java.awt.Color(153, 102, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Resultado");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(110, 240, 100, 30);
+        jLabel4.setBounds(180, 290, 100, 30);
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
         btnCalcular.setText("Calcular");
         btnCalcular.setOpaque(true);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -81,26 +86,31 @@ public class frmE010 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(120, 370, 80, 24);
+        btnCalcular.setBounds(170, 480, 80, 23);
 
+        txtNumero1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumero1ActionPerformed(evt);
+            }
+        });
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtNumero1keyPressTxtNumero(evt);
             }
         });
         jPanel1.add(txtNumero1);
-        txtNumero1.setBounds(90, 130, 130, 30);
+        txtNumero1.setBounds(160, 140, 130, 30);
 
         jLabel5.setBackground(new java.awt.Color(153, 102, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("<html><center>Duracion de un examen<br> en segundos<center>");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(50, 60, 220, 50);
+        jLabel5.setBounds(120, 60, 220, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/six.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E10.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 310, 530);
+        jLabel1.setBounds(0, 10, 430, 520);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -169,9 +179,7 @@ public class frmE010 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,13 +196,55 @@ public class frmE010 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
+    public boolean isNumber(String numero) {
+        try {
+            int Number = Integer.parseInt(numero);
+            return true;
+        } catch (NumberFormatException NFE) {
+            JOptionPane.showMessageDialog(this,
+                    "El texto " + numero + " no es un numero valido",
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+            txtNumero1.setText("");
+            return false;
+        }
+    }
+
+    public void calcularTiempo() {
+        if (isNumber(txtNumero1.getText())) {
+
+            float min = 0, hora = 0, seg = 0;
+            seg = Integer.parseInt(txtNumero1.getText());
+            if (seg > 0) {
+
+                min = seg / 60;
+                hora = seg / 3600;
+                lblResultado.setText("<html><b> El tiempo que duro el examen es: </b> <br>" + hora + "<b> horas </b> <br> " + min + "<b> minutos </b> <br>" + seg + "<b> segundos </b> <html>");
+                lblResultado.setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Digite un numero mayor a o", "error", JOptionPane.ERROR_MESSAGE);
+                txtNumero1.setText("");
+            }
+
+        }
+    }
+
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
+        calcularTiempo();
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void txtNumero1keyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1keyPressTxtNumero
         // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calcularTiempo();
+
+        }
     }//GEN-LAST:event_txtNumero1keyPressTxtNumero
+
+    private void txtNumero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumero1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumero1ActionPerformed
 
     /**
      * @param args the command line arguments

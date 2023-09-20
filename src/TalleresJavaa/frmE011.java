@@ -34,7 +34,6 @@ public class frmE011 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtNumero = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         lblResultado = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -60,10 +59,10 @@ public class frmE011 extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("       EJERCICIO 11");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(70, 20, 200, 29);
+        jLabel2.setBounds(60, 10, 200, 29);
 
         txtNumero.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -71,7 +70,7 @@ public class frmE011 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtNumero);
-        txtNumero.setBounds(140, 120, 80, 30);
+        txtNumero.setBounds(100, 80, 160, 30);
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
@@ -84,38 +83,31 @@ public class frmE011 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(140, 230, 80, 23);
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("NUMERO");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(150, 90, 70, 20);
+        btnCalcular.setBounds(150, 420, 80, 23);
 
         jLabel3.setBackground(new java.awt.Color(153, 102, 0));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Times", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("MOSTRAR NUMERO EN  ORDEN INVERSO");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(40, 50, 310, 16);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(130, 180, 100, 30);
+        lblResultado.setBounds(110, 380, 160, 30);
 
         jLabel7.setBackground(new java.awt.Color(153, 102, 0));
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("  RESULTADO");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(130, 160, 100, 20);
+        jLabel7.setBounds(140, 350, 100, 20);
 
         jLabel1.setBackground(new java.awt.Color(153, 102, 0));
         jLabel1.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/two.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/EE11.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 370, 280);
+        jLabel1.setBounds(-220, 0, 580, 470);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -184,11 +176,11 @@ public class frmE011 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
         );
 
         pack();
@@ -206,6 +198,7 @@ public class frmE011 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,
                     "El texto " + numero + " no es un numero valido",
                     "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+            txtNumero.setText("");
             return false;
         }
     }
@@ -235,6 +228,7 @@ public class frmE011 extends javax.swing.JFrame {
             }
             lblResultado.setText(Respuesta);
             lblResultado.setVisible(true);
+            
         }
 
     }
@@ -300,7 +294,6 @@ public class frmE011 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblResultado;

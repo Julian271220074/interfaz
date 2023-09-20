@@ -59,12 +59,13 @@ public class frmE015 extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("       EJERCICIO 15");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(130, 20, 200, 29);
+        jLabel2.setBounds(90, 10, 200, 29);
         jPanel1.add(txtCateto1);
-        txtCateto1.setBounds(200, 120, 80, 22);
+        txtCateto1.setBounds(130, 120, 160, 22);
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(153, 0, 0));
         btnCalcular.setText("Calcular");
         btnCalcular.setOpaque(true);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -73,38 +74,38 @@ public class frmE015 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(200, 230, 80, 23);
+        btnCalcular.setBounds(170, 320, 80, 23);
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("NUMERO");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(210, 90, 70, 20);
+        jLabel4.setBounds(170, 80, 70, 20);
 
         jLabel3.setBackground(new java.awt.Color(153, 102, 0));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("MOSTRAR UN NUMERO POR ESCRITO");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(110, 60, 270, 16);
+        jLabel3.setBounds(80, 60, 270, 16);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(190, 190, 100, 30);
+        lblResultado.setBounds(140, 260, 140, 30);
 
         jLabel7.setBackground(new java.awt.Color(153, 102, 0));
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("  RESULTADO");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(180, 160, 120, 20);
+        jLabel7.setBounds(150, 210, 120, 20);
 
         jLabel1.setBackground(new java.awt.Color(153, 102, 0));
         jLabel1.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/OIP (1).jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E15.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, 0, 460, 270);
+        jLabel1.setBounds(-320, 0, 740, 450);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -173,11 +174,11 @@ public class frmE015 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
         );
 
         pack();

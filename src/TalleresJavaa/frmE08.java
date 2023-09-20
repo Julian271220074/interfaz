@@ -84,7 +84,8 @@ public class frmE08 extends javax.swing.JFrame {
         jPanel1.add(btnCalcular);
         btnCalcular.setBounds(140, 300, 80, 23);
 
-        lblResultado.setOpaque(true);
+        lblResultado.setForeground(new java.awt.Color(255, 255, 255));
+        lblResultado.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.add(lblResultado);
         lblResultado.setBounds(50, 380, 260, 80);
 
@@ -106,10 +107,10 @@ public class frmE08 extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(110, 190, 130, 16);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/four.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E8.gif"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 350, 510);
+        jLabel1.setBounds(-650, 0, 1030, 510);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -178,7 +179,7 @@ public class frmE08 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

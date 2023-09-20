@@ -4,6 +4,8 @@
  */
 package TalleresJavaa;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aprendiz
@@ -56,34 +58,39 @@ public class frmE012 extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("       EJERCICIO 12");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(-30, 10, 200, 29);
+        jLabel2.setBounds(150, 10, 200, 29);
 
         jLabel4.setBackground(new java.awt.Color(153, 102, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("RESULTADO");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(280, 270, 110, 30);
+        jLabel4.setBounds(160, 340, 110, 30);
 
         jLabel5.setBackground(new java.awt.Color(153, 102, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("VERIFICAR SI UN NUMERO ES CAPICUA");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(190, 10, 350, 16);
+        jLabel5.setBounds(100, 110, 350, 16);
 
+        txtNumero1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumero1ActionPerformed(evt);
+            }
+        });
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtNumero1keyPressTxtNumero(evt);
             }
         });
         jPanel1.add(txtNumero1);
-        txtNumero1.setBounds(280, 130, 130, 30);
+        txtNumero1.setBounds(160, 260, 130, 30);
 
-        btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
+        btnCalcular.setBackground(new java.awt.Color(0, 0, 0));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
         btnCalcular.setText("Calcular");
         btnCalcular.setOpaque(true);
@@ -93,22 +100,22 @@ public class frmE012 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(300, 200, 80, 24);
+        btnCalcular.setBounds(160, 470, 80, 23);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(230, 310, 220, 80);
+        lblResultado.setBounds(100, 380, 220, 80);
 
         jLabel6.setBackground(new java.awt.Color(153, 102, 0));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("INGRESE UN NUMERO");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(250, 90, 200, 16);
+        jLabel6.setBounds(140, 230, 200, 16);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eigth.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E12.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 540, 550);
+        jLabel1.setBounds(-520, -460, 1210, 980);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -177,11 +184,11 @@ public class frmE012 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 534, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
         );
 
         pack();
@@ -190,7 +197,25 @@ public class frmE012 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-
+    
+    public boolean isNumber(String numero) {
+        try {
+            int Number = Integer.parseInt(numero);
+            return true;
+        } catch (NumberFormatException NFE) {
+            JOptionPane.showMessageDialog(this,
+                    "El texto " + numero + " no es un numero valido",
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+    
+    public void verificar(){
+        if(isNumber(txtNumero1.getText())){
+            String num = null;
+            int x = 1;
+        }
+    }
     private void txtNumero1keyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1keyPressTxtNumero
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumero1keyPressTxtNumero
@@ -198,6 +223,10 @@ public class frmE012 extends javax.swing.JFrame {
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void txtNumero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumero1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumero1ActionPerformed
 
     /**
      * @param args the command line arguments

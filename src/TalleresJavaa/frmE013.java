@@ -56,17 +56,17 @@ public class frmE013 extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("       EJERCICIO 13");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(50, 50, 200, 29);
+        jLabel2.setBounds(10, 10, 200, 29);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("NUMERO DE OCURRENCIAS");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(10, 120, 310, 29);
+        jLabel3.setBounds(0, 60, 340, 29);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -74,10 +74,11 @@ public class frmE013 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtNumero1);
-        txtNumero1.setBounds(100, 230, 130, 30);
+        txtNumero1.setBounds(60, 260, 130, 30);
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 51, 255));
         btnCalcular.setText("Calcular");
         btnCalcular.setOpaque(true);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -86,27 +87,27 @@ public class frmE013 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(120, 290, 80, 24);
+        btnCalcular.setBounds(90, 430, 80, 23);
 
         jLabel4.setBackground(new java.awt.Color(153, 102, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("RESULTADO");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(100, 330, 110, 30);
+        jLabel4.setBounds(80, 300, 110, 30);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(70, 380, 180, 30);
+        lblResultado.setBounds(40, 350, 180, 30);
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("INGRESE UN CARACTER");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(30, 180, 280, 29);
+        jLabel5.setBounds(10, 210, 290, 29);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nine.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E13.gif"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 510, 490);
 

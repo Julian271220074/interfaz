@@ -74,7 +74,7 @@ public class frmE016 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(140, 380, 80, 24);
+        btnCalcular.setBounds(140, 380, 80, 23);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -109,9 +109,9 @@ public class frmE016 extends javax.swing.JFrame {
         jPanel1.add(lblResultado);
         lblResultado.setBounds(90, 300, 180, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ileven.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E16.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 370, 579);
+        jLabel1.setBounds(0, 0, 370, 580);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");

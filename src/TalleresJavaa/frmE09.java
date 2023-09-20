@@ -60,9 +60,10 @@ public class frmE09 extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("       EJERCICIO 9");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(70, 20, 200, 29);
+        jLabel2.setBounds(210, 30, 200, 29);
 
         txtNumero.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -70,14 +71,14 @@ public class frmE09 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtNumero);
-        txtNumero.setBounds(130, 240, 100, 30);
+        txtNumero.setBounds(270, 210, 100, 30);
 
         jLabel4.setBackground(new java.awt.Color(153, 102, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("VERIFICAR MES");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(110, 100, 140, 30);
+        jLabel4.setBounds(250, 90, 140, 30);
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
@@ -90,29 +91,29 @@ public class frmE09 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(140, 310, 80, 23);
+        btnCalcular.setBounds(280, 440, 80, 23);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(60, 410, 240, 40);
+        lblResultado.setBounds(200, 370, 240, 40);
 
         jLabel5.setBackground(new java.awt.Color(153, 102, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("RESULTADO");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(130, 370, 110, 30);
+        jLabel5.setBounds(270, 300, 110, 30);
 
         jLabel6.setBackground(new java.awt.Color(153, 102, 0));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("ingrese un numero entre 1-12");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(50, 200, 280, 30);
+        jLabel6.setBounds(190, 170, 280, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/five.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E9.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 360, 550);
+        jLabel1.setBounds(0, 0, 620, 550);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -181,7 +182,7 @@ public class frmE09 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
