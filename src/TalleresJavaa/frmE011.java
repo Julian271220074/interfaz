@@ -228,7 +228,7 @@ public class frmE011 extends javax.swing.JFrame {
             }
             lblResultado.setText(Respuesta);
             lblResultado.setVisible(true);
-            
+
         }
 
     }

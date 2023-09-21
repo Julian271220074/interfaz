@@ -216,38 +216,36 @@ public class frmE05 extends javax.swing.JFrame {
             return false;
         }
     }
-    
-    public void fecha(){
+
+    public void fecha() {
         if (isNumber(txtNumero.getText())) {
             String dias = null, mees = null, anioss = null, fechas = null;
             int anio = 0, mes = 0, dia = 0;
-            if(!(txtNumero.getText().length() ==8) || (txtNumero.getText().substring(1,1) == "-")){
-            JOptionPane.showMessageDialog(this, "Fecha invalida", "error", JOptionPane.ERROR_MESSAGE);
-             txtNumero.setText("");
-        }
-           else{
-            anioss = txtNumero.getText().substring(0, 4);
-            mees = txtNumero.getText().substring(4, 6);
-            dias = txtNumero.getText().substring(6, 8);
-            anio = Integer.parseInt(anioss);
-            dia = Integer.parseInt(dias);
-            mes = Integer.parseInt(mees);
+            if (!(txtNumero.getText().length() == 8) || (txtNumero.getText().substring(1, 1) == "-")) {
+                JOptionPane.showMessageDialog(this, "Fecha invalida", "error", JOptionPane.ERROR_MESSAGE);
+                txtNumero.setText("");
+            } else {
+                anioss = txtNumero.getText().substring(0, 4);
+                mees = txtNumero.getText().substring(4, 6);
+                dias = txtNumero.getText().substring(6, 8);
+                anio = Integer.parseInt(anioss);
+                dia = Integer.parseInt(dias);
+                mes = Integer.parseInt(mees);
             }
-            if((mes <= 12 && mes > 0) && (dia <= 31 && dia > 0)){
-            lblResultado.setText(" Año: " + anio + " Mes: " + mes + " Dia: " + dia);
-            lblResultado.setVisible(true);
-            }
-            else{
-             JOptionPane.showMessageDialog(this, "Fecha invalida", "error", JOptionPane.ERROR_MESSAGE); 
-              txtNumero.setText("");
+            if ((mes <= 12 && mes > 0) && (dia <= 31 && dia > 0)) {
+                lblResultado.setText(" Año: " + anio + " Mes: " + mes + " Dia: " + dia);
+                lblResultado.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Fecha invalida", "error", JOptionPane.ERROR_MESSAGE);
+                txtNumero.setText("");
             }
         }
-        
+
     }
     private void txtNumerokeyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerokeyPressTxtNumero
         // TODO add your handling code here:
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-          fecha();   
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            fecha();
 
         }
 
@@ -256,12 +254,12 @@ public class frmE05 extends javax.swing.JFrame {
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
         fecha();
-       
+
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void keyTypedTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_keyTypedTxtNumero
         // TODO add your handling code here:
-        if (txtNumero.getText().length() >= 8){
+        if (txtNumero.getText().length() >= 8) {
             evt.consume();
         }
     }//GEN-LAST:event_keyTypedTxtNumero

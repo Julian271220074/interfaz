@@ -62,14 +62,14 @@ public class frmE013 extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("       EJERCICIO 13");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 10, 200, 29);
+        jLabel2.setBounds(70, 10, 200, 29);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("NUMERO DE OCURRENCIAS");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(0, 60, 340, 29);
+        jLabel3.setBounds(30, 60, 330, 29);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -77,7 +77,7 @@ public class frmE013 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtNumero1);
-        txtNumero1.setBounds(60, 260, 130, 30);
+        txtNumero1.setBounds(120, 200, 130, 30);
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
@@ -90,16 +90,17 @@ public class frmE013 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(90, 430, 80, 23);
+        btnCalcular.setBounds(140, 430, 80, 23);
 
         jLabel4.setBackground(new java.awt.Color(153, 102, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("RESULTADO");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(80, 300, 110, 30);
+        jLabel4.setBounds(130, 300, 110, 30);
 
         lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(255, 255, 255));
         lblResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.add(lblResultado);
         lblResultado.setBounds(40, 350, 310, 40);
@@ -109,11 +110,11 @@ public class frmE013 extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("INGRESE UN CARACTER");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(10, 210, 290, 29);
+        jLabel5.setBounds(50, 100, 290, 29);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E13.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/origin.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 510, 490);
+        jLabel1.setBounds(0, 0, 380, 490);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -182,7 +183,7 @@ public class frmE013 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,10 +198,9 @@ public class frmE013 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-    
-   
-    public void caracter (){
-        String cadena = txtNumero1.getText();        
+
+    public void caracter() {
+        String cadena = txtNumero1.getText();
         char caracterB = JOptionPane.showInputDialog(this, "Digite el carácter a contar: ").charAt(0);
         int con = contarCaracter(cadena, caracterB);
         lblResultado.setText("El carácter '" + caracterB + "' aparece " + con + " veces.");
@@ -214,7 +214,7 @@ public class frmE013 extends javax.swing.JFrame {
             }
         }
         return con;
-    
+
     }
 
     private void txtNumero1keyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1keyPressTxtNumero

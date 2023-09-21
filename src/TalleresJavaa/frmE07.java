@@ -217,26 +217,25 @@ public class frmE07 extends javax.swing.JFrame {
     }
 
     public void calcularHipotenusa() {
-        if(isNumber(txtCateto1.getText()) && isNumber(txtCateto2.getText())){
-        int cat1 = 0, cat2 = 0;
-        float Resultado = 0.0f;
-        float Resultado1 = 0.0f, Resultadot = 0.0f;
-        DecimalFormat df = new DecimalFormat("0.00");
-        cat1 = Integer.parseInt(txtCateto1.getText());
-        cat2 = Integer.parseInt(txtCateto2.getText());
-        if(cat1>0 && cat2>0){
-        Resultado = (float) Math.pow(cat1, 2);
-        Resultado1 = (float) Math.pow(cat2, 2);
-        Resultadot = (float)Resultado+Resultado1;
+        if (isNumber(txtCateto1.getText()) && isNumber(txtCateto2.getText())) {
+            int cat1 = 0, cat2 = 0;
+            float Resultado = 0.0f;
+            float Resultado1 = 0.0f, Resultadot = 0.0f;
+            DecimalFormat df = new DecimalFormat("0.00");
+            cat1 = Integer.parseInt(txtCateto1.getText());
+            cat2 = Integer.parseInt(txtCateto2.getText());
+            if (cat1 > 0 && cat2 > 0) {
+                Resultado = (float) Math.pow(cat1, 2);
+                Resultado1 = (float) Math.pow(cat2, 2);
+                Resultadot = (float) Resultado + Resultado1;
 
-        lblResultado.setText(df.format(Resultadot));
-        lblResultado.setVisible(true);
-        }
-        else {
-            JOptionPane.showMessageDialog(this, "Error, ingrese un numero mayor a 0", "error", JOptionPane.ERROR_MESSAGE);
-        }
+                lblResultado.setText(df.format(Resultadot));
+                lblResultado.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Error, ingrese un numero mayor a 0", "error", JOptionPane.ERROR_MESSAGE);
+            }
 
-    }
+        }
     }
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:

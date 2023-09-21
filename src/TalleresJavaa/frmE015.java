@@ -99,6 +99,7 @@ public class frmE015 extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(80, 60, 270, 16);
 
+        lblResultado.setForeground(new java.awt.Color(255, 255, 255));
         lblResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.add(lblResultado);
         lblResultado.setBounds(90, 260, 230, 30);
@@ -216,7 +217,7 @@ public class frmE015 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this,
                         "Numero Fuera de Rango", "error", JOptionPane.ERROR_MESSAGE);
                 txtNumero.setText("");
-                
+
             } else {
                 String numeroEscrito = convertirNumeroEscrito(num);
                 lblResultado.setText(num + " es: " + numeroEscrito);

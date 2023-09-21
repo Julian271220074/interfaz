@@ -194,16 +194,14 @@ public class frmE014 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-  public void palindroma(){
-    String input = txtNumero.getText();
+    public void palindroma() {
+        String input = txtNumero.getText();
         if (palindromo(input)) {
             lblResultado.setText("La cadena ingresada es un palíndromo.");
         } else {
             lblResultado.setText("La cadena ingresada no es un palíndromo.");
         }
     }
-
-    
 
     public static boolean palindromo(String input) {
 
@@ -221,7 +219,7 @@ public class frmE014 extends javax.swing.JFrame {
     }
     private void txtNumerokeyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerokeyPressTxtNumero
         // TODO add your handling code here:
-           if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             palindroma();
 
         }

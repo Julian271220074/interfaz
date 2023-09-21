@@ -74,7 +74,7 @@ public class frmE16 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(130, 510, 80, 23);
+        btnCalcular.setBounds(150, 440, 80, 23);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -96,7 +96,7 @@ public class frmE16 extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("INGRESE FRASE DE 5 PALABRAS");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(40, 150, 290, 30);
+        jLabel5.setBounds(40, 140, 290, 30);
 
         jLabel6.setBackground(new java.awt.Color(153, 102, 0));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -105,13 +105,14 @@ public class frmE16 extends javax.swing.JFrame {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(130, 250, 110, 30);
 
-        lblResultado.setOpaque(true);
+        lblResultado.setForeground(new java.awt.Color(255, 255, 255));
+        lblResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.add(lblResultado);
         lblResultado.setBounds(10, 300, 350, 100);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E11.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E16.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 370, 540);
+        jLabel1.setBounds(0, -20, 370, 530);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -184,7 +185,7 @@ public class frmE16 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
         );
 
         pack();
@@ -197,9 +198,9 @@ public class frmE16 extends javax.swing.JFrame {
         String frase = txtNumero1.getText();
         if (countWords(frase) >= 5) {
             String fraseCapitalizada = capitalize(frase);
-            lblResultado.setText("Frase capitalizada: " + fraseCapitalizada);
+            lblResultado.setText("<html>Frase capitalizada:  <br> " + fraseCapitalizada);
         } else {
-            lblResultado.setText("La frase debe contener al menos 5 palabras. Inténtalo de nuevo.");
+            lblResultado.setText("<html> La frase debe tener <br> al menos 5 palabras.");
         }
     }
 

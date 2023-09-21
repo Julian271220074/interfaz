@@ -84,10 +84,11 @@ public class frmE08 extends javax.swing.JFrame {
         jPanel1.add(btnCalcular);
         btnCalcular.setBounds(140, 300, 80, 23);
 
+        lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(255, 255, 255));
         lblResultado.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(50, 380, 260, 80);
+        lblResultado.setBounds(30, 380, 320, 80);
 
         txtNumero.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -219,12 +220,12 @@ public class frmE08 extends javax.swing.JFrame {
                 dia = Integer.parseInt(dias);
                 mes = Integer.parseInt(mees);
             }
-            if ( (anio <= 2023) && (mes <= 12 && mes > 0) && (dia <= 31 && dia > 0)) {
-                lblResultado.setText("<html><b> Año: </b> " + anio + "<br><b> Mes: <b/> " + mes + "<br><b> Dia: </b> " + dia+"</html>");
+            if ((anio <= 2023) && (mes <= 12 && mes > 0) && (dia <= 31 && dia > 0)) {
+                lblResultado.setText("<html> Año: " + anio + "<br> Mes:  " + mes + "<br> Dia:  " + dia);
                 lblResultado.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this, "Fecha invalida", "error", JOptionPane.ERROR_MESSAGE);
-                 txtNumero.setText("");
+                txtNumero.setText("");
             }
             lblResultado.setVisible(true);
         }
@@ -246,10 +247,10 @@ public class frmE08 extends javax.swing.JFrame {
 
     private void keyTypedTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_keyTypedTxtNumero
         // TODO add your handling code here:
-          if (txtNumero.getText().length() >= 8){
+        if (txtNumero.getText().length() >= 8) {
             evt.consume();
         }
-    
+
     }//GEN-LAST:event_keyTypedTxtNumero
 
     /**

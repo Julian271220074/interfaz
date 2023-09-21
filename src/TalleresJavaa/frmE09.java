@@ -18,7 +18,7 @@ public class frmE09 extends javax.swing.JFrame {
      */
     public frmE09() {
         initComponents();
-         lblResultado.setVisible(false);
+        lblResultado.setVisible(false);
     }
 
     /**
@@ -196,70 +196,71 @@ public class frmE09 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-        public boolean isNumber (String numero){
-        try{
+    public boolean isNumber(String numero) {
+        try {
             int Number = Integer.parseInt(numero);
             return true;
-        }catch(NumberFormatException NFE){
-            JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un numero valido", 
+        } catch (NumberFormatException NFE) {
+            JOptionPane.showMessageDialog(this,
+                    "El texto " + numero + " no es un numero valido",
                     "Numero Invalido", JOptionPane.ERROR_MESSAGE);
             return false;
         }
     }
-    public void calendario(){
-        if(isNumber(txtNumero.getText())){
+
+    public void calendario() {
+        if (isNumber(txtNumero.getText())) {
             int num = 0;
             num = Integer.parseInt(txtNumero.getText());
-            
+
             switch (num) {
                 case 1:
                     lblResultado.setText("Enero es el numero: " + num);
                     break;
-                 case 2:
+                case 2:
                     lblResultado.setText("Febrero es el numero: " + num);
-                    break; 
-                 case 3:
+                    break;
+                case 3:
                     lblResultado.setText("Marzo es el numero: " + num);
                     break;
-                 case 4:
+                case 4:
                     lblResultado.setText("Abril es el numero: " + num);
                     break;
-                 case 5:
+                case 5:
                     lblResultado.setText("Mayo es el numero: " + num);
                     break;
-                 case 6:
+                case 6:
                     lblResultado.setText("Junio es el numero: " + num);
                     break;
-                 case 7:
+                case 7:
                     lblResultado.setText("Julio es el numero: " + num);
                     break;
-                 case 8:
+                case 8:
                     lblResultado.setText("Agosto es el numero: " + num);
                     break;
-                 case 9:
+                case 9:
                     lblResultado.setText("Septiembre es el numero: " + num);
                     break;
-                 case 10:
+                case 10:
                     lblResultado.setText("Octubre es el numero: " + num);
                     break;
-                 case 11:
+                case 11:
                     lblResultado.setText("Noviembre es el numero: " + num);
                     break;
-                 case 12:
+                case 12:
                     lblResultado.setText("Diciembre es el numero: " + num);
                     break;
-                 default:
-                     JOptionPane.showMessageDialog(this, "Digite un numero entre 1 y 12", "Error", JOptionPane.ERROR_MESSAGE);
-                     txtNumero.setText("");
-                     
+                default:
+                    JOptionPane.showMessageDialog(this, "Digite un numero entre 1 y 12", "Error", JOptionPane.ERROR_MESSAGE);
+                    txtNumero.setText("");
+
             }
-           lblResultado.setVisible(true); 
+            lblResultado.setVisible(true);
         }
-    }    
+    }
     private void txtNumerokeyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerokeyPressTxtNumero
         // TODO add your handling code here:
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             calendario();
 
         }

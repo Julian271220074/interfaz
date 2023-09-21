@@ -225,7 +225,7 @@ public class frmE04 extends javax.swing.JFrame {
     private void txtNumerokeyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerokeyPressTxtNumero
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-          calcularMultiplo();   
+            calcularMultiplo();
 
         }
 
