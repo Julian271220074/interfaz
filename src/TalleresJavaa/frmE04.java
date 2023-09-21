@@ -87,8 +87,9 @@ public class frmE04 extends javax.swing.JFrame {
         txtNumero.setBounds(50, 130, 160, 30);
 
         lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(255, 255, 255));
         lblResultado.setText("<html><center><br><center>");
-        lblResultado.setOpaque(true);
+        lblResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.add(lblResultado);
         lblResultado.setBounds(10, 270, 230, 60);
 

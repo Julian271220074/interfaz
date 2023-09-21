@@ -62,21 +62,21 @@ public class frmE012 extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("       EJERCICIO 12");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(150, 10, 200, 29);
+        jLabel2.setBounds(0, 20, 200, 29);
 
         jLabel4.setBackground(new java.awt.Color(153, 102, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("RESULTADO");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(160, 340, 110, 30);
+        jLabel4.setBounds(40, 340, 110, 30);
 
         jLabel5.setBackground(new java.awt.Color(153, 102, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("VERIFICAR SI UN NUMERO ES CAPICUA");
+        jLabel5.setText("VERIFICAR CIFRA PAR Y CAPICUA");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(100, 110, 350, 16);
+        jLabel5.setBounds(0, 60, 350, 16);
 
         txtNumero1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +89,7 @@ public class frmE012 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtNumero1);
-        txtNumero1.setBounds(160, 260, 130, 30);
+        txtNumero1.setBounds(30, 190, 130, 30);
 
         btnCalcular.setBackground(new java.awt.Color(0, 0, 0));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
@@ -102,23 +102,24 @@ public class frmE012 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(160, 470, 80, 23);
+        btnCalcular.setBounds(60, 480, 80, 23);
 
+        lblResultado.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(255, 255, 255));
         lblResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(100, 380, 220, 80);
+        lblResultado.setBounds(10, 380, 220, 80);
 
         jLabel6.setBackground(new java.awt.Color(153, 102, 0));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("INGRESE UN NUMERO");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(140, 230, 200, 16);
+        jLabel6.setBounds(10, 130, 200, 16);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E12.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(-520, -460, 1210, 980);
+        jLabel1.setBounds(-440, -380, 1550, 900);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -187,7 +188,7 @@ public class frmE012 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

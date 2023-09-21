@@ -92,7 +92,9 @@ public class frmE011 extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(40, 50, 310, 16);
 
-        lblResultado.setOpaque(true);
+        lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(255, 255, 255));
+        lblResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.add(lblResultado);
         lblResultado.setBounds(110, 380, 160, 30);
 

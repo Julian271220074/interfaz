@@ -62,7 +62,7 @@ public class frmE07 extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("       EJERCICIO 7");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(60, 10, 200, 29);
@@ -71,6 +71,7 @@ public class frmE07 extends javax.swing.JFrame {
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
         btnCalcular.setText("Calcular");
         btnCalcular.setOpaque(true);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -107,18 +108,21 @@ public class frmE07 extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(270, 10, 130, 16);
 
-        lblResultado.setOpaque(true);
+        lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(0, 0, 0));
+        lblResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(360, 190, 100, 30);
+        lblResultado.setBounds(330, 190, 140, 40);
 
         jLabel7.setBackground(new java.awt.Color(153, 102, 0));
         jLabel7.setText("  RESULTADO");
         jLabel7.setOpaque(true);
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(370, 146, 80, 20);
+        jLabel7.setBounds(360, 150, 80, 20);
 
         jLabel1.setBackground(new java.awt.Color(153, 102, 0));
-        jLabel1.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pitagoras.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 490, 260);

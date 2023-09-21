@@ -93,7 +93,9 @@ public class frmE09 extends javax.swing.JFrame {
         jPanel1.add(btnCalcular);
         btnCalcular.setBounds(280, 440, 80, 23);
 
-        lblResultado.setOpaque(true);
+        lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(255, 255, 255));
+        lblResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.add(lblResultado);
         lblResultado.setBounds(200, 370, 240, 40);
 
@@ -215,40 +217,40 @@ public class frmE09 extends javax.swing.JFrame {
 
             switch (num) {
                 case 1:
-                    lblResultado.setText("Enero es el numero: " + num);
+                    lblResultado.setText("Enero es: " + num);
                     break;
                 case 2:
-                    lblResultado.setText("Febrero es el numero: " + num);
+                    lblResultado.setText("Febrero es: " + num);
                     break;
                 case 3:
-                    lblResultado.setText("Marzo es el numero: " + num);
+                    lblResultado.setText("Marzo es: " + num);
                     break;
                 case 4:
-                    lblResultado.setText("Abril es el numero: " + num);
+                    lblResultado.setText("Abril es: " + num);
                     break;
                 case 5:
-                    lblResultado.setText("Mayo es el numero: " + num);
+                    lblResultado.setText("Mayo es: " + num);
                     break;
                 case 6:
-                    lblResultado.setText("Junio es el numero: " + num);
+                    lblResultado.setText("Junio es: " + num);
                     break;
                 case 7:
-                    lblResultado.setText("Julio es el numero: " + num);
+                    lblResultado.setText("Julio es: " + num);
                     break;
                 case 8:
-                    lblResultado.setText("Agosto es el numero: " + num);
+                    lblResultado.setText("Agosto es: " + num);
                     break;
                 case 9:
-                    lblResultado.setText("Septiembre es el numero: " + num);
+                    lblResultado.setText("Septiembre es: " + num);
                     break;
                 case 10:
-                    lblResultado.setText("Octubre es el numero: " + num);
+                    lblResultado.setText("Octubre es: " + num);
                     break;
                 case 11:
-                    lblResultado.setText("Noviembre es el numero: " + num);
+                    lblResultado.setText("Noviembre es: " + num);
                     break;
                 case 12:
-                    lblResultado.setText("Diciembre es el numero: " + num);
+                    lblResultado.setText("Diciembre es: " + num);
                     break;
                 default:
                     JOptionPane.showMessageDialog(this, "Digite un numero entre 1 y 12", "Error", JOptionPane.ERROR_MESSAGE);
