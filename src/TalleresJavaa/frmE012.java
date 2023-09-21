@@ -92,6 +92,7 @@ public class frmE012 extends javax.swing.JFrame {
 
         btnCalcular.setBackground(new java.awt.Color(0, 0, 0));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(255, 255, 255));
         btnCalcular.setText("Calcular");
         btnCalcular.setOpaque(true);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +101,7 @@ public class frmE012 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(160, 470, 80, 23);
+        btnCalcular.setBounds(160, 470, 80, 24);
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
@@ -108,7 +109,6 @@ public class frmE012 extends javax.swing.JFrame {
 
         jLabel6.setBackground(new java.awt.Color(153, 102, 0));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("INGRESE UN NUMERO");
         jPanel1.add(jLabel6);
         jLabel6.setBounds(140, 230, 200, 16);
@@ -214,6 +214,21 @@ public class frmE012 extends javax.swing.JFrame {
         if(isNumber(txtNumero1.getText())){
             String num = null;
             int x = 1;
+            boolean desi = false;
+            num = txtNumero1.getText();
+            x = num.length();
+            if((x % 2) != 0){
+                JOptionPane.showMessageDialog(this, "Error, digite un numero par", "error", JOptionPane.ERROR_MESSAGE);
+            }
+            int[] nume;
+            nume = new int[x];
+            int[] nume2;
+            nume2 = new int[x + 1];
+            int[] numee;
+            numee = new int[x];
+            for (int i = 0; i < x; i++){
+                
+            }
         }
     }
     private void txtNumero1keyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1keyPressTxtNumero
