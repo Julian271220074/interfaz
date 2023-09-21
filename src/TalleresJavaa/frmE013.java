@@ -4,6 +4,9 @@
  */
 package TalleresJavaa;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aprendiz
@@ -96,9 +99,10 @@ public class frmE013 extends javax.swing.JFrame {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(80, 300, 110, 30);
 
-        lblResultado.setOpaque(true);
+        lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(40, 350, 180, 30);
+        lblResultado.setBounds(40, 350, 310, 40);
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
@@ -193,13 +197,37 @@ public class frmE013 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+    
+   
+    public void caracter (){
+        String cadena = txtNumero1.getText();        
+        char caracterB = JOptionPane.showInputDialog(this, "Digite el carácter a contar: ").charAt(0);
+        int con = contarCaracter(cadena, caracterB);
+        lblResultado.setText("El carácter '" + caracterB + "' aparece " + con + " veces.");
+    }
+
+    public static int contarCaracter(String cadena, char caracter) {
+        int con = 0;
+        for (int i = 0; i < cadena.length(); i++) {
+            if (cadena.charAt(i) == caracter) {
+                con++;
+            }
+        }
+        return con;
+    
+    }
 
     private void txtNumero1keyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1keyPressTxtNumero
         // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            caracter();
+
+        }
     }//GEN-LAST:event_txtNumero1keyPressTxtNumero
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
+        caracter();
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**

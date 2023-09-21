@@ -4,6 +4,8 @@
  */
 package TalleresJavaa;
 
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author Aprendiz
@@ -90,9 +92,10 @@ public class frmE014 extends javax.swing.JFrame {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(90, 190, 290, 30);
 
-        lblResultado.setOpaque(true);
+        lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(110, 350, 260, 50);
+        lblResultado.setBounds(40, 350, 390, 50);
 
         btnCalcular.setBackground(new java.awt.Color(102, 0, 0));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
@@ -191,13 +194,42 @@ public class frmE014 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+  public void palindroma(){
+    String input = txtNumero.getText();
+        if (palindromo(input)) {
+            lblResultado.setText("La cadena ingresada es un palíndromo.");
+        } else {
+            lblResultado.setText("La cadena ingresada no es un palíndromo.");
+        }
+    }
 
+    
+
+    public static boolean palindromo(String input) {
+
+        input = input.replaceAll("\\s+", "").toLowerCase();
+        int i = 0;
+        int d = input.length() - 1;
+        while (i < d) {
+            if (input.charAt(i) != input.charAt(d)) {
+                return false;
+            }
+            i++;
+            d--;
+        }
+        return true;
+    }
     private void txtNumerokeyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerokeyPressTxtNumero
         // TODO add your handling code here:
+           if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            palindroma();
+
+        }
     }//GEN-LAST:event_txtNumerokeyPressTxtNumero
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
+        palindroma();
 
     }//GEN-LAST:event_btnCalcularActionPerformed
 

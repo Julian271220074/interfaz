@@ -4,6 +4,7 @@
  */
 package TalleresJavaa;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -101,14 +102,16 @@ public class frmE012 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(160, 470, 80, 24);
+        btnCalcular.setBounds(160, 470, 80, 23);
 
-        lblResultado.setOpaque(true);
+        lblResultado.setForeground(new java.awt.Color(255, 255, 255));
+        lblResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.add(lblResultado);
         lblResultado.setBounds(100, 380, 220, 80);
 
         jLabel6.setBackground(new java.awt.Color(153, 102, 0));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("INGRESE UN NUMERO");
         jPanel1.add(jLabel6);
         jLabel6.setBounds(140, 230, 200, 16);
@@ -197,7 +200,7 @@ public class frmE012 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-    
+
     public boolean isNumber(String numero) {
         try {
             int Number = Integer.parseInt(numero);
@@ -209,34 +212,57 @@ public class frmE012 extends javax.swing.JFrame {
             return false;
         }
     }
-    
-    public void verificar(){
-        if(isNumber(txtNumero1.getText())){
+
+    public void verificar() {
+        if (isNumber(txtNumero1.getText())) {
             String num = null;
             int x = 1;
             boolean desi = false;
             num = txtNumero1.getText();
             x = num.length();
-            if((x % 2) != 0){
-                JOptionPane.showMessageDialog(this, "Error, digite un numero par", "error", JOptionPane.ERROR_MESSAGE);
-            }
-            int[] nume;
-            nume = new int[x];
-            int[] nume2;
-            nume2 = new int[x + 1];
-            int[] numee;
-            numee = new int[x];
-            for (int i = 0; i < x; i++){
-                
+            if ((x % 2) != 0) {
+                JOptionPane.showMessageDialog(this, "Error, digite una cifra par", "error", JOptionPane.ERROR_MESSAGE);
+                txtNumero1.setText("");
+            } else {
+                int[] nume;
+                nume = new int[x];
+                int[] nume2;
+                nume2 = new int[x + 1];
+                int[] numee;
+                numee = new int[x];
+
+                for (int i = 0; i < x; i++) {
+                    nume[i] = ((num.charAt(i)));
+                    numee[i] = (Character.getNumericValue(nume[i]));
+                }
+                int y = x - 1;
+                for (int i = 1; i <= x; i++) {
+                    nume2[i] = (Character.getNumericValue(nume[y]));
+                    if (nume2[i] == numee[i - 1]) {
+                        desi = true;
+                    }
+                    y -= 1;
+                }
+                if (desi == true) {
+                    lblResultado.setText("Es capicúa");
+                } else {
+                    lblResultado.setText("No es capicúa");
+                }
+
             }
         }
     }
     private void txtNumero1keyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1keyPressTxtNumero
         // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            verificar();
+
+        }
     }//GEN-LAST:event_txtNumero1keyPressTxtNumero
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
+        verificar();
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void txtNumero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumero1ActionPerformed

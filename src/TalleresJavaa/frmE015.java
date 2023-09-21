@@ -4,6 +4,9 @@
  */
 package TalleresJavaa;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
@@ -28,7 +31,7 @@ public class frmE015 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        txtCateto1 = new javax.swing.JTextField();
+        txtNumero = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -60,8 +63,14 @@ public class frmE015 extends javax.swing.JFrame {
         jLabel2.setText("       EJERCICIO 15");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(90, 10, 200, 29);
-        jPanel1.add(txtCateto1);
-        txtCateto1.setBounds(130, 120, 160, 22);
+
+        txtNumero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNumeroKeyPressed(evt);
+            }
+        });
+        jPanel1.add(txtNumero);
+        txtNumero.setBounds(130, 120, 160, 22);
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
@@ -90,9 +99,9 @@ public class frmE015 extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(80, 60, 270, 16);
 
-        lblResultado.setOpaque(true);
+        lblResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(140, 260, 140, 30);
+        lblResultado.setBounds(90, 260, 230, 30);
 
         jLabel7.setBackground(new java.awt.Color(153, 102, 0));
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -187,11 +196,66 @@ public class frmE015 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+    public boolean isNumber(String numero) {
+        try {
+            int Number = Integer.parseInt(numero);
+            return true;
+        } catch (NumberFormatException NFE) {
+            JOptionPane.showMessageDialog(this,
+                    "El texto " + numero + " no es un numero valido",
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+            txtNumero.setText("");
+            return false;
+        }
+    }
 
+    public void numeros() {
+        if (isNumber(txtNumero.getText())) {
+            int num = Integer.parseInt(txtNumero.getText());
+            if (num < 0 || num > 99) {
+                JOptionPane.showMessageDialog(this,
+                        "Numero Fuera de Rango", "error", JOptionPane.ERROR_MESSAGE);
+                txtNumero.setText("");
+                
+            } else {
+                String numeroEscrito = convertirNumeroEscrito(num);
+                lblResultado.setText(num + " es: " + numeroEscrito);
+                txtNumero.setText("");
+            }
+        }
+    }
+
+    public static String convertirNumeroEscrito(int num) {
+        String[] u = {"Cero", "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve"};
+        String[] e = {"Diez", "Once", "Doce", "Trece", "Catorce", "Quince", "Dieciséis", "Diecisiete", "Dieciocho", "Diecinueve"};
+        String[] d = {"", "", "Veinte", "Treinta", "Cuarenta", "Cincuenta", "Sesenta", "Setenta", "Ochenta", "Noventa"};
+        if (num < 10) {
+            return u[num];
+        } else if (num >= 10 && num < 20) {
+            return e[num - 10];
+        } else {
+            int decena = num / 10;
+            int unidad = num % 10;
+            String resultado = d[decena];
+            if (unidad > 0) {
+                resultado += " y " + u[unidad];
+            }
+            return resultado;
+        }
+    }
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
-        
+        numeros();
+
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void txtNumeroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumeroKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            numeros();
+
+        }
+    }//GEN-LAST:event_txtNumeroKeyPressed
 
     /**
      * @param args the command line arguments
@@ -251,7 +315,7 @@ public class frmE015 extends javax.swing.JFrame {
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
-    private javax.swing.JTextField txtCateto1;
+    private javax.swing.JTextField txtNumero;
     // End of variables declaration//GEN-END:variables
 
 }

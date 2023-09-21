@@ -4,16 +4,18 @@
  */
 package TalleresJavaa;
 
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author Aprendiz
  */
-public class frmE016 extends javax.swing.JFrame {
+public class frmE16 extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmE016
+     * Creates new form frmE16
      */
-    public frmE016() {
+    public frmE16() {
         initComponents();
     }
 
@@ -26,7 +28,6 @@ public class frmE016 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnCalcular = new javax.swing.JButton();
@@ -51,8 +52,6 @@ public class frmE016 extends javax.swing.JFrame {
         contentsMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ileven.jpeg"))); // NOI18N
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
@@ -66,6 +65,7 @@ public class frmE016 extends javax.swing.JFrame {
 
         btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
         btnCalcular.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
         btnCalcular.setText("Calcular");
         btnCalcular.setOpaque(true);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +74,7 @@ public class frmE016 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCalcular);
-        btnCalcular.setBounds(140, 380, 80, 23);
+        btnCalcular.setBounds(130, 510, 80, 23);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -107,11 +107,11 @@ public class frmE016 extends javax.swing.JFrame {
 
         lblResultado.setOpaque(true);
         jPanel1.add(lblResultado);
-        lblResultado.setBounds(90, 300, 180, 30);
+        lblResultado.setBounds(10, 300, 350, 100);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E16.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E11.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 370, 580);
+        jLabel1.setBounds(0, 0, 370, 540);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -184,7 +184,7 @@ public class frmE016 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
         );
 
         pack();
@@ -193,14 +193,48 @@ public class frmE016 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+    public void frase() {
+        String frase = txtNumero1.getText();
+        if (countWords(frase) >= 5) {
+            String fraseCapitalizada = capitalize(frase);
+            lblResultado.setText("Frase capitalizada: " + fraseCapitalizada);
+        } else {
+            lblResultado.setText("La frase debe contener al menos 5 palabras. Inténtalo de nuevo.");
+        }
+    }
+
+    public static int countWords(String frase) {
+        if (frase == null || frase.isEmpty()) {
+            return 0;
+        }
+        String[] words = frase.trim().split("\\s+");
+        return words.length;
+    }
+
+    public static String capitalize(String frase) {
+        if (frase == null || frase.isEmpty()) {
+            return "";
+        }
+        String[] words = frase.trim().split("\\s+");
+        StringBuilder sb = new StringBuilder();
+        for (String word : words) {
+            char firstLetter = Character.toUpperCase(word.charAt(0));
+            sb.append(firstLetter).append(word.substring(1)).append(" ");
+        }
+        return sb.toString().trim();
+    }
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
-
+        frase();
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void txtNumero1keyPressTxtNumero(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1keyPressTxtNumero
         // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            frase();
+
+        }
     }//GEN-LAST:event_txtNumero1keyPressTxtNumero
 
     /**
@@ -220,20 +254,20 @@ public class frmE016 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmE016.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmE16.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmE016.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmE16.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmE016.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmE16.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmE016.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmE16.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmE016().setVisible(true);
+                new frmE16().setVisible(true);
             }
         });
     }
@@ -251,7 +285,6 @@ public class frmE016 extends javax.swing.JFrame {
     private javax.swing.JMenu helpMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
