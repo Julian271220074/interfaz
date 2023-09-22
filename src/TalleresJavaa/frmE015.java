@@ -109,7 +109,7 @@ public class frmE015 extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("  RESULTADO");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(150, 210, 120, 20);
+        jLabel7.setBounds(150, 220, 120, 20);
 
         jLabel1.setBackground(new java.awt.Color(153, 102, 0));
         jLabel1.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N

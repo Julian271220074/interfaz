@@ -64,7 +64,9 @@ public class frmE010 extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(110, 20, 200, 29);
 
-        lblResultado.setOpaque(true);
+        lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(255, 255, 255));
+        lblResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.add(lblResultado);
         lblResultado.setBounds(80, 330, 270, 130);
 
@@ -110,7 +112,7 @@ public class frmE010 extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/E10.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 10, 430, 520);
+        jLabel1.setBounds(0, -30, 430, 550);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -183,10 +185,7 @@ public class frmE010 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
         );
 
         pack();

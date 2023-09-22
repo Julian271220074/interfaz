@@ -202,6 +202,7 @@ public class frmE04 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,
                     "El texto " + numero + " no es un numero valido",
                     "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+            txtNumero.setText("");
             return false;
         }
     }

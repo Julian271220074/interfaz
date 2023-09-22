@@ -5,6 +5,7 @@
 package TalleresJavaa;
 
 import java.awt.event.KeyEvent;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 /**
@@ -206,7 +207,13 @@ public class frmE011 extends javax.swing.JFrame {
     }
 
     public void invertirNumero() {
+        
         if (isNumber(txtNumero.getText())) {
+            int[] Numero = {
+                Integer.parseInt(txtNumero.getText()),
+            };
+            Arrays.sort(Numero);
+            
 
             String num = txtNumero.getText();
 
